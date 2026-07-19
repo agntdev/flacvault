@@ -1,19 +1,33 @@
 [
   {
-    "name": "/browse",
+    "name": "/browse shows empty state when no tags exist",
     "steps": [
       {
+        "send": { "text": "/browse" },
         "expect": [
           {
             "method": "sendMessage",
             "payload": {
-              "text": "Browse tracks by tags/genres"
+              "text": "No tags available yet. Tracks will appear here once they're submitted and approved."
             }
           }
-        ],
-        "send": {
-          "text": "/browse"
-        }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Browse button opens the browse menu",
+    "steps": [
+      {
+        "send": { "callback": "browse:start" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "No tags available yet. Tracks will appear here once they're submitted and approved."
+            }
+          }
+        ]
       }
     ]
   }

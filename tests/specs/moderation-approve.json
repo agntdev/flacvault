@@ -1,19 +1,17 @@
 [
   {
-    "name": "Approve",
+    "name": "Approve button rejects non-admin",
     "steps": [
       {
+        "send": { "callback": "moderation:approve:1" },
         "expect": [
           {
             "method": "sendMessage",
             "payload": {
-              "text": "Approve pending submission"
+              "text": "Only admins can approve submissions."
             }
           }
-        ],
-        "send": {
-          "callback": "moderation:approve"
-        }
+        ]
       }
     ]
   }

@@ -1,19 +1,17 @@
 [
   {
-    "name": "Submit Track",
+    "name": "Submit Track button starts submission flow",
     "steps": [
       {
+        "send": { "callback": "submit:start" },
         "expect": [
           {
             "method": "sendMessage",
             "payload": {
-              "text": "Initiate track submission process"
+              "text": "Send me a FLAC file to submit it to the library.\n\nOnly FLAC format is accepted — other file types will be rejected."
             }
           }
-        ],
-        "send": {
-          "callback": "submit:start"
-        }
+        ]
       }
     ]
   }

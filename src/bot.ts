@@ -6,7 +6,22 @@ import { createBot, type BotContext } from "./toolkit/index.js";
 // bot grows. Durable domain data must NOT live here — use the toolkit's
 // persistent storage (see AGENTS.md).
 export interface Session {
-  // example: step?: "awaiting_amount";
+  step?: string;
+  pendingTrack?: {
+    title: string;
+    artist: string;
+    album: string;
+    duration: number;
+    file_size: number;
+    file_path: string;
+    tags: string[];
+    cover_art?: string;
+  };
+  browsePage?: number;
+  searchPage?: number;
+  recentPage?: number;
+  myUploadsPage?: number;
+  awaitingRejectReason?: string;
 }
 
 export type Ctx = BotContext<Session>;

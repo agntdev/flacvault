@@ -1,19 +1,33 @@
 [
   {
-    "name": "/myuploads",
+    "name": "/myuploads shows empty state when user has no uploads",
     "steps": [
       {
+        "send": { "text": "/myuploads" },
         "expect": [
           {
             "method": "sendMessage",
             "payload": {
-              "text": "View user's own submissions"
+              "text": "You haven't uploaded any tracks yet. Tap Submit Track to add one."
             }
           }
-        ],
-        "send": {
-          "text": "/myuploads"
-        }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "My uploads button shows user's submissions",
+    "steps": [
+      {
+        "send": { "callback": "myuploads:show" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "You haven't uploaded any tracks yet. Tap Submit Track to add one."
+            }
+          }
+        ]
       }
     ]
   }

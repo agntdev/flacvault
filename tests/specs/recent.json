@@ -1,19 +1,33 @@
 [
   {
-    "name": "/recent",
+    "name": "/recent shows empty state when no tracks exist",
     "steps": [
       {
+        "send": { "text": "/recent" },
         "expect": [
           {
             "method": "sendMessage",
             "payload": {
-              "text": "View recently submitted tracks"
+              "text": "No tracks submitted yet. Be the first to upload one!"
             }
           }
-        ],
-        "send": {
-          "text": "/recent"
-        }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Recent button opens recent tracks",
+    "steps": [
+      {
+        "send": { "callback": "recent:show" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "No tracks submitted yet. Be the first to upload one!"
+            }
+          }
+        ]
       }
     ]
   }

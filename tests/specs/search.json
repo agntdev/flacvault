@@ -1,19 +1,33 @@
 [
   {
-    "name": "/search",
+    "name": "/search shows prompt when no query given",
     "steps": [
       {
+        "send": { "text": "/search" },
         "expect": [
           {
             "method": "sendMessage",
             "payload": {
-              "text": "Search tracks by title/artist/album"
+              "text": "What are you looking for?\n\nSearch by title, artist, or album."
             }
           }
-        ],
-        "send": {
-          "text": "/search"
-        }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Search button opens search prompt",
+    "steps": [
+      {
+        "send": { "callback": "search:start" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "What are you looking for?\n\nSearch by title, artist, or album."
+            }
+          }
+        ]
       }
     ]
   }

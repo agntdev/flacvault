@@ -1,19 +1,17 @@
 [
   {
-    "name": "Reject",
+    "name": "Reject button rejects non-admin",
     "steps": [
       {
+        "send": { "callback": "moderation:reject:1" },
         "expect": [
           {
             "method": "sendMessage",
             "payload": {
-              "text": "Reject pending submission with optional reason"
+              "text": "Only admins can reject submissions."
             }
           }
-        ],
-        "send": {
-          "callback": "moderation:reject"
-        }
+        ]
       }
     ]
   }

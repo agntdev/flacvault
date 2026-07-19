@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Reject",
+    "steps": [
+      {
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "Reject pending submission with optional reason"
+            }
+          }
+        ],
+        "send": {
+          "callback": "moderation:reject"
+        }
+      }
+    ]
+  }
+]

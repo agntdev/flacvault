@@ -1,0 +1,20 @@
+[
+  {
+    "name": "/recent",
+    "steps": [
+      {
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "View recently submitted tracks"
+            }
+          }
+        ],
+        "send": {
+          "text": "/recent"
+        }
+      }
+    ]
+  }
+]

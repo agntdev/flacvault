@@ -1,0 +1,20 @@
+[
+  {
+    "name": "/myuploads",
+    "steps": [
+      {
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "View user's own submissions"
+            }
+          }
+        ],
+        "send": {
+          "text": "/myuploads"
+        }
+      }
+    ]
+  }
+]

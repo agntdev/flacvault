@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Approve",
+    "steps": [
+      {
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "Approve pending submission"
+            }
+          }
+        ],
+        "send": {
+          "callback": "moderation:approve"
+        }
+      }
+    ]
+  }
+]
